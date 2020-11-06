@@ -1,0 +1,5 @@
+#N canvas 860 408 316 156 12;
+#X declare -path bin/data;
+#X obj 22 13 declare -path bin/data;
+#X obj 23 50 audio;
+#X obj 24 85 gui;
