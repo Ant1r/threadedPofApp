@@ -1,5 +1,16 @@
-#N canvas 860 408 316 156 12;
+#N canvas 485 680 496 277 12;
 #X declare -path bin/data;
+#X declare -path ggee -lib ggee;
 #X obj 22 13 declare -path bin/data;
 #X obj 23 50 audio;
-#X obj 24 85 gui;
+#X obj 199 13 declare -path ggee -lib ggee;
+#X obj 159 109 getdir;
+#X obj 159 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 159 168 pd~ -fifo 2;
+#X msg 89 138 pd~ stop;
+#X msg 159 139 pd~ start \$1/bin/data/gui.pd;
+#X connect 3 0 7 0;
+#X connect 4 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
